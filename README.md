@@ -1,145 +1,81 @@
-# 19 Testing: Tech Quiz Test Suite
+# Tech Quiz - Test Suite using Cypress
 
-## Your Task
 
-Your assignment this week underscores the importance of ensuring reliability and robustness in modern web applications through comprehensive testing. In today's dynamic development environment, testing is not just an afterthought but a critical part of the development process that ensures applications meet user demands and perform efficiently under various conditions.
+![MIT](https://img.shields.io/badge/License-MIT-blue)
 
-This week, you'll take the starter codebase of a fully functioning Tech Quiz application and enhance it by adding Cypress for both component and end-to-end tests. The app was built using the MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API. It allows users to take a quiz of ten random questions and view their final score.
+## Website: 
+[GitHub-link](https://github.com/noIDEA-tech/19-Tech-Quiz-Tech-Suite)
 
-To complete the assignment, you’ll need to do the following:
+## Description
+This project consists of a Tech Quiz application designed to allow users to take a 10 question quiz to test their knowledge of Python language and syntax. It was built using the MERN stack with React, MongoDB Database, and Node.js/Express.js server and API. Cypress has been added to conduct component and end-to-end (e2e) tests for proper functionality.
 
-1. Install Cypress as a dev dependency
+## Video Link:
+[Video-Demonstration-link](https://drive.google.com/file/d/1P3VzmFeBleFQEIT9xpNUDEmWi1yKlSAD/view)
 
-2. Configure Cypress for both component and end-to-end testing
+<video controls src="Tech Quiz-Test Suite using Cypress.mp4" title="Title"></video>
 
-3. Create a component test for the quiz component
 
-4. Create an end-to-test for the quiz component
+![app_image](client/assets/images/test-image-1.png)
+![app_image](client/assets/images/test-image-2.png)
+![app_image](client/assets/images/test-image-3.png)
+![app_image](client/assets/images/test-cypress-image-4.png)
+![app_image](client/assets/images/test-e2e-terminal-image.png)
 
-## User Story
+## Table of Contents:
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Features](#features)
+- [Tests](#tests)
+- [Contact](#contact)
 
+## Installations:
 ```md
-AS AN aspiring developer
-I WANT to take a tech quiz
-SO THAT I can test my knowledge and improve my skills
+- npm install 
+- npm install -D cypress 
+- npm install -D @cypress/webpack-dev-server @cypress/react babel-loader @babel/preset-env @babel/preset-react @babel/preset-typescript style-loader css-loader --legacy-peer-deps
 ```
+## Usage:
+- Run `npm run test` in your root directory terminal
 
-## Acceptance Criteria
+## Credits/Acknowledgements: 
+- Nancy Watreas
+- Assistance with Cypress test implementation was provided by Anthropic. (2025). Claude.ai [AI Assistant]. Retrieved from https://claude.ai
 
-```md
-GIVEN I am taking a tech quiz
-WHEN I click the start button
-THEN the quiz starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN all questions are answered
-THEN the quiz is over
-WHEN the quiz is over
-THEN I can view my score
-WHEN the quiz is over
-THEN I can start a new quiz
-```
+## License
+MIT
 
-## Mock-Up
+## Features:
+1. User-facing features:  
+    - Users can take a tech quiz to test their Python knowledge
+    - Users can start a new quiz with the click of a button
+    - Users receive immediate feedback as they progress through questions
+    - Users can see their final score after completing the quiz
+    - Users can take a new quiz after completing one
 
-The following animation demonstrates the application functionality:
+2. Developer/testing features:
+    - Cypress E2E testing to verify the complete user flow works correctly
+    - Cypress component testing to test the Quiz component in isolation
+    - Test coverage for all the acceptance criteria
 
-![A GIF demonstrates a functioning quiz.](./Assets/19-testing-homework-demo.gif)
+## Tests:
+- START SERVER-API: cd server and run the following command:  `npm run start`  
+- START CLIENT BROWSER: cd client and run the following command:  `npm run dev`
+- To run Component Test and End-to-End Test, navigate back to your root directory and run the following command: `npm run test`
 
-## Getting Started
+    ### Additional tests:
+    - Run E2E tests in headless mode: `npm run test:e2e` or `npx cypress run --e2e`
+    - Open Cypress UI for E2E tests: `npx c ypress open --e2e`
+    - Open Cypress UI for component tests: `npx cypress open --component`
 
-This Challenge combines many of the skills we've covered so far. In addition to the user story and acceptance criteria, we’ve provided some guidelines to help you get started.
+    ### Test coverage: 
+    - E2E tests verify the entire user flow from starting the quiz to completion
+    - Component tests check isolated functionality of the Quiz component
 
-Because this Challenge requires a video submission, refer to the [Full-Stack Blog video submission guide](https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide) for guidance on creating and sharing a video.
 
-**Important**: You won't need to modify code for the existing application. In this challenge, you'll only be creating tests for the existing application.
-
-Your testing should use [Cypress](https://docs.cypress.io/guides/overview/why-cypress) to run both the component tests and the end-to-end tests. The testing will be invoked using the following command:
-
-```bash
-npm run test
-```
-
-It's recommended that you start with a directory structure that looks like the following example:
-
-```md
-.
-├── client/                 // the client application
-├── cypress/                // Folder for Cypress
-    ├── component/          // Folder for component tests
-        └── Quiz.cy.jsx     // Component tests for the Quiz component
-    ├── e2e/                // Folder for end-to-end tests
-        └── quiz.cy.js      // End-to-end tests for the Tech Quiz
-    ├── fixtures/           // Folder for test fixtures
-        └── questions.json  // Mock data for testing
-    └── tsconfig.json
-├── server/                 // the server application
-├── .gitignore
-├── cypress.config.ts       // Runs the application using imports from lib/
-├── package.json
-├── tsconfig.json
-└── README.md              // App description, link to video, setup and usage instructions           
-```
-
-**Note**: The server for this application requires environment variables to function properly. You'll need to rename the `.env.example` file to `.env`.
-
-## Grading Requirements
-
-> **Note**: If a Challenge assignment submission is marked as “0”, it's considered incomplete and won't count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
-
-This Challenge is graded based on the following criteria:
-
-### Deliverables: 15%
-
-* Your GitHub repository must contain the application code as well as the configuration and tests using Cypress.
-
-### Walkthrough Video: 32%
-
-* A walkthrough video that demonstrates the component and end-to-end tests running and passing must be submitted.
-
-* The `README.md` file must include a link to the walkthrough video.
-
-* The walkthrough video must show all tests passing from the command line.
-
-* The walkthrough video must demonstrate how a user would invoke the application from the command line.
-
-### Technical Acceptance Criteria: 40%
-
-* Your submission should satisfy all of the preceding acceptance criteria in addition to the following:
-
-  * You must use the [Cypress package](https://www.npmjs.com/package/cypress).
-
-  * The application must have a component test for the quiz component.
-
-  * The application must have an end-to-end test for the quiz component.
-
-### Repository Quality: 13%
-
-* Your repository has a unique name.
-
-* Your repository follows the best practices for file structure and naming conventions.
-
-* Your repository follows the best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Your repository contains multiple descriptive commit messages.
-
-* Your repository contains a high-quality README with a description and a link to your walkthrough video.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* A walkthrough video that demonstrates the functionality of the application and the application successfully passing tests.
-
-* The URL of your GitHub repository, which should have a unique name and include a README describing the project.
-
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+## Contact Info: 
+If there are any questions or concerns, I can be reached at:
+- ##### [github: noIDEA-tech](https://github.com/noIDEA-tech)
+- ##### [email: nwatreas2023@gmail.com](mailto:nwatreas2023@gmail.com)
+ 
