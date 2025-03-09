@@ -15,18 +15,13 @@ export default defineConfig({
     devServer: {
       framework: 'react',
       bundler: 'vite',
-      // Use the same Vite configuration as your project
+      // Use the Vite configuration without referencing webpack
       viteConfig: {
         plugins: [react()],
         server: {
           port: 3001,
           host: '127.0.0.1',
-        },
-        resolve: {
-          alias: {
-            // Add any aliases that your project uses
-          },
-        },
+        }
       },
     },
     supportFile: 'cypress/support/component.ts',
