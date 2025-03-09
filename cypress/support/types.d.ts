@@ -1,4 +1,3 @@
-// Import necessary types
 import { mount } from 'cypress/react';
 
 // Extend Cypress namespace
